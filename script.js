@@ -1,5 +1,6 @@
 const searchBtn = document.querySelector('#search-btn');
 const flagSpan = document.querySelector('#flag');
+const answersBtns = document.querySelector('#container-answers')
 
 function randomCountry(data){
     return Math.floor(Math.random() * data.length)
@@ -17,18 +18,23 @@ function answers(name, data){
 
 }
 
-function allContries() {
+function allContries() {   
     let finalURL = `https://restcountries.com/v3.1/all`;
-
-    // console.log(finalURL);
     fetch(finalURL).then((response) => response.json()).then((data) => {
         let country = randomCountry(data);
-        console.log(data[country].name.common)
         findCountry(data[country].name.common)
         answers(data[country].name.common, data);
+        localStorage.setItem('resposta', data[country].name.common)
 
         
     })
+    answersBtns.addEventListener('click', identifyAnswer);
+    let choices = answersBtns.children;
+    for (let i = 0; i < choices.length; i += 1){
+        if (choices[i].classList !== ''){
+            choices[i].classList.remove(choices[i].classList[0])
+        }
+    }
 
 }
 
@@ -44,10 +50,7 @@ function findCountry(pais) {
     const countryName = pais;
     let finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
 
-    console.log(finalURL);
     fetch(finalURL).then((response) => response.json()).then((data) => {
-        console.log(data[0])
-        // console.log(data[0].flags.svg)
         displayFlag(data[0].flags.svg)
     })
 
@@ -55,4 +58,23 @@ function findCountry(pais) {
 
 }
 
+allContries();
+
 searchBtn.addEventListener('click', allContries);
+
+function identifyAnswer(e) {
+    let resposta = localStorage.getItem('resposta');
+    if (e.target.innerHTML.includes('<span')){
+        return
+    }
+
+    if (resposta === e.target.innerHTML ){
+        e.target.classList.add('correct')
+    }else {
+        e.target.classList.add('wrong')
+    }
+    answersBtns.removeEventListener('click', identifyAnswer)
+
+
+}
+

@@ -39,6 +39,10 @@ main {
     gap: 20px;
 }
 
+#container-by-flags {
+    display: none;
+}
+
 .container-flag {
     margin-top: 20px;
     width: 400px;
@@ -67,4 +71,18 @@ main {
     background-color: white;
     color: rgb(48, 48, 227);
     cursor: pointer;
+}
+
+.container-answers .correct {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: greenyellow;
+}
+
+.container-answers .wrong {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: red;
 }
