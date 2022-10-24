@@ -69,7 +69,7 @@ main {
 }
 
 .container-answers {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     width: 100%;
     max-width: 600px;
     display: flex;
@@ -79,6 +79,11 @@ main {
 
 .container-answers span {
     cursor: pointer;
+    background-color: rgb(59, 59, 59);
+    padding: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .container-answers .correct {

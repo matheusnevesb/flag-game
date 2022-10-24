@@ -32,10 +32,10 @@ function allContries() {
     let choices = answersBtns.children;
     for (let i = 0; i < choices.length; i += 1){
         if (choices[i].classList !== ''){
-            choices[i].classList.remove(choices[i].classList[2])
+            choices[i].classList.remove(choices[i].classList[0])
         }
-        choices[i].classList.add('btn')
-        choices[i].classList.add('btn-light')
+        // choices[i].classList.add('btn')
+        // choices[i].classList.add('btn-light')
     }
 
 }
