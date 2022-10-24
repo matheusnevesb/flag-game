@@ -11,11 +11,16 @@ function answers(name, data){
     const a02 = document.querySelector('#answer-02');
     const a03 = document.querySelector('#answer-03');
     const a04 = document.querySelector('#answer-04');
-    a01.innerText = name;
-    a02.innerText = data[randomCountry(data)].name.common;
-    a03.innerText = data[randomCountry(data)].name.common;
-    a04.innerText = data[randomCountry(data)].name.common;
-
+    let listaDeRespostas = [];
+    listaDeRespostas.push(name);
+    for(let i = 0; i < 3; i += 1){
+        listaDeRespostas.push(data[randomCountry(data)].name.common);
+    }
+    listaDeRespostas.sort()
+    a01.innerText = listaDeRespostas[0];
+    a02.innerText = listaDeRespostas[1];
+    a03.innerText = listaDeRespostas[2];
+    a04.innerText = listaDeRespostas[3];
 }
 
 function allContries() {   
