@@ -100,3 +100,11 @@ main {
     color: rgb(0, 0, 0);
     background-color: red;
 }
+
+footer {
+    padding: 10px 0;
+}
+
+footer div {
+    color: white;
+}
