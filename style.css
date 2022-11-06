@@ -19,24 +19,32 @@ header h1 {
 }
 
 main {
+    margin-top: 20px;
     display: flex;
     gap: 10px;
-    height: 100vw;
-}
-
-.menu-lateral {
-    background-color: rgb(48, 48, 227);
-    width: 200px;
+    height: auto;
+    justify-content: center;
 }
 
 .conteudo {
-    background-color: rgb(48, 48, 227);
     width: 100%;
+    max-width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 250px;
 }
 
 .conteudo-title {
     display: flex;
+    flex-direction: column;
     gap: 20px;
+    align-items: center;
+}
+
+#search-btn {
+    max-width: 400px;
 }
 
 #container-by-flags {
@@ -44,33 +52,39 @@ main {
 }
 
 .container-flag {
-    margin-top: 20px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 300px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0 auto;
 }
 
 .flag {
     border: 2px solid black;
+    width: 100%;
     max-width: 400px;
     height: auto;
 }
 
 .container-answers {
-    margin-top: 20px;
-    width: 400px;
+    /* margin-top: 20px; */
+    width: 100%;
+    max-width: 600px;
     display: flex;
     gap: 10px;
     flex-direction: column;
 }
 
 .container-answers span {
-    border-radius: 10px;
-    width: 100%;
-    padding: 5px;
-    background-color: white;
-    color: rgb(48, 48, 227);
     cursor: pointer;
+    background-color: rgb(59, 59, 59);
+    padding: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 1px solid rgb(137, 137, 137);
 }
 
 .container-answers .correct {
@@ -85,4 +99,12 @@ main {
     font-weight: bold;
     color: rgb(0, 0, 0);
     background-color: red;
+}
+
+footer {
+    padding: 10px 0;
+}
+
+footer div {
+    color: white;
 }
