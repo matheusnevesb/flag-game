@@ -42,6 +42,7 @@ function allContries() {
         // choices[i].classList.add('btn')
         // choices[i].classList.add('btn-light')
     }
+    addScore()
 
 }
 
@@ -83,5 +84,11 @@ function identifyAnswer(e) {
     answersBtns.removeEventListener('click', identifyAnswer)
 
 
+}
+const round = document.querySelector('#round');
+const scoreTotal = document.querySelector('#score');
+
+function addScore() {
+    console.log(answersBtns.children.find((elemento)=> elemento.classList === 'correct' ))
 }
 
